@@ -3,6 +3,7 @@ package com.example.composeapplication
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -26,7 +27,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-private fun myApp(){
+private fun myApp() {
     Surface(color = MaterialTheme.colors.background) {
         Greeting("Android")
     }
@@ -35,7 +36,10 @@ private fun myApp(){
 @Composable
 private fun Greeting(name: String) {
     Surface(color = MaterialTheme.colors.primary) {
-        Text(text = "Hello $name!", modifier = Modifier.padding(24.dp))
+        Column(modifier = Modifier.padding(24.dp)) {
+            Text(text = "Hello,")
+            Text(text = "$name!")
+        }
     }
 }
 
